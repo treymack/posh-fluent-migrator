@@ -1,0 +1,6 @@
+{
+  "name": "PoSH for FluentMigrator",
+  "tagline": "PowerShell scripts for managing FluentMigrator projects",
+  "body": "# PoSH for FluentMigrator\r\nPowerShell scripts for managing FluentMigrator projects\r\n\r\nThe scripts assume a specific project structure. Change Get-MigrationProject.ps1 as needed to match yours.\r\n\r\n* src\r\n  * db\r\n    * project-name.Migrations\r\n\r\nYou'll also need to change Migration-Projects.json to reflect the names of your migration projects.\r\n\r\nUsage:\r\n\r\nInitial Creation\r\n``` powershell\r\n.\\scripts\\Get-MigrationProject.ps1 | .\\scripts\\Invoke-MsBuild.ps1 | .\\scripts\\Create-LocalDatabase.ps1 -DropDatabaseIfExists | .\\scripts\\Migrate-LocalDatabase.ps1\r\n```\r\n\r\nTesting Latest Migration and Rollback in `project-name`\r\n``` powershell\r\n.\\scripts\\Get-MigrationProject.ps1 project-name | .\\scripts\\Invoke-MsBuild.ps1 | .\\scripts\\Migrate-LocalDatabase.ps1 | .\\scripts\\Migrate-LocalDatabase.ps1 -Rollback | .\\scripts\\Migrate-LocalDatabase.ps1\r\n```",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
